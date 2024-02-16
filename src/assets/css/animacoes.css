@@ -186,3 +186,32 @@ transition: all 1s;
 .transicao {
     transition: all 2s;
 }
+
+/* transition group lista que tera um efeito de slide*/
+.lista-enter-from {
+    opacity: 0;
+    transform: translateX(-150px)
+}
+
+.lista-enter-active {
+    transition: all 1s;
+}
+
+.lista-enter-to {
+    opacity: 1;
+    transform: translateX(0px)
+}
+
+.lista-leave-from  {
+    opacity: 1;
+    transform: translateX(0px)
+}
+
+.lista-leave-active {
+    transition: all 1s;
+}
+
+.lista-leave-to {
+    opacity: 0;
+    transform: translateX(150px)
+}
