@@ -11,7 +11,13 @@
                 <tr v-for="(h, indice) in pokemon.habilidades" :key="indice">
                     <td>{{ h }}</td>
                     <td class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-danger btn-sm">x</button>
+                        <button 
+                            type="button" 
+                            class="btn btn-danger btn-sm"
+                            @click="$emit('removerHabilidade', indice)"
+                        >   
+                            x
+                        </button>
                     </td>
                 </tr>
             </tbody>
