@@ -56,7 +56,7 @@
 
           <div class="detalhes">
             <!-- exibe dados de acordo com o menu de navegação -->
-            <router-view v-slot="{ Component }">
+            <router-view v-slot="{ Component }" :pokemon="pokemon">
               <transition
                 enter-active-class="animate__animated animate__zoomInDown"
               >
@@ -106,7 +106,12 @@
               <h1>{{ p.id }} {{ p.nome }}</h1>
               <span>{{ p.tipo }}</span>
               <div class="cartao-pokemon-img">
+                <transition
+                  appear
+                  enter-active-class="animate__animated animate__fadeInDown"
+              >
                 <img :src="require(`@/assets/imgs/pokemons/${p.imagem}`)">
+                </transition>
               </div>
             </div>
             <!-- fim listagem dinâmica -->
