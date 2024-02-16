@@ -56,7 +56,7 @@
 
           <div class="detalhes">
             <!-- exibe dados de acordo com o menu de navegação -->
-            <router-view v-slot="{ Component }" :pokemon="pokemon">
+            <router-view v-slot="{ Component }" :pokemon="pokemon" @adicionarHabilidade="adicionarHabilidade">
               <transition
                 enter-active-class="animate__animated animate__zoomInDown"
               >
@@ -166,6 +166,12 @@ export default {
       //se a ação recursiva não for chamada
       if(!this.exibir && !mudaPokemonAnalisado) {
         this.pokemon = {}
+      }
+    },
+    adicionarHabilidade(habilidade) {
+      console.log('Estamos no componente pai com a habilidade: ', habilidade)
+      if(this.pokemon.habilidades) {
+        this.pokemon.habilidades.push(habilidade)
       }
     }
   }
